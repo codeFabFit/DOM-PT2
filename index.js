@@ -29,6 +29,9 @@ const h1Element = document.createElement("h1")
 h1Element.textContent = "DOM Manipulation";
 
 
+
+
+
 // join the h1 to the content 
 
 mainEl.appendChild(h1Element);
@@ -63,24 +66,55 @@ subMenuEl.style.height = "100%";
 subMenuEl.style.backgroundColor = " var(--top-menu-bg)";
 subMenuEl.classList.add('flex-around')
 
+subMenuEl.style.top='0';
 
 const topMenuLinks = topMenuEl.querySelectorAll('a');
-topMenuEl.addEventListener('click', function (Event) {
-    Event.preventDefault();
+topMenuEl.addEventListener('click', function (Element) {
+    Element.preventDefault();
+
+    const clickedLink = Element.target;
+    if (clickedLink && clickedLink.tagName === 'A') {
+      // const isActive = clickedLink.classList.contains('active')
+      console.log(clickedLink.textContent);
+    }
 })
 
-if (Event.target && Event.target.tagName) {
-     console.log(Event.target.textContent);
-}
- if (Event.target.tagName === 'A') {
-const clickedLink = Event.target;
- }
 
- const isActive = clickedLink.classList.contain('active');
+
+const clickedLink = Element.target;
+
+if (Element.target && element.target.tagName) {
+     console.log(Element.target.textContent);
+
+//  const isActive = clickedLink.classList.contain('active');
 
  topMenuLinks.forEach(like => link.classList.remove('active'));
 
  if(!isActive) {
   clickedLink.classList.add('active');
+
+  let subLinks = [];
+  buildSubmenu(subLinks);
+
+ }}
+
+ function buildSubmenu(subLinks) {
+subMenuEl.innerHTML= '';
+subLinks.forEach(link => {
+  const submenulink = document.createElement('a');
+  submenulink.setAttribute('href', link.href);
   
+
+subMenuEl.appendChild(submenulink);
+
+})
+
  }
+
+ if (clickedLink.textContent === 'ABOUT') 
+ {
+  const aboutH1Element = document.createElement('h1');
+  aboutH1Element.textContent= 'About' 
+mainEl.innerHTML = '';
+mainEl.appendChild(aboutH1Element);
+}
