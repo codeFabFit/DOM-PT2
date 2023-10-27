@@ -101,20 +101,20 @@ if (Element.target && element.target.tagName) {
  function buildSubmenu(subLinks) {
 subMenuEl.innerHTML= '';
 subLinks.forEach(link => {
-  const submenulink = document.createElement('a');
-  submenulink.setAttribute('href', link.href);
-  
-
-subMenuEl.appendChild(submenulink);
-
+  const subMenuLink = document.createElement('a');
+  subMenuLink.setAttribute('href', link.href);
+subMenuEl.appendChild(subMenuLink);
 })
-
- }
-
- if (clickedLink.textContent === 'ABOUT') 
- {
-  const aboutH1Element = document.createElement('h1');
-  aboutH1Element.textContent= 'About' 
-mainEl.innerHTML = '';
-mainEl.appendChild(aboutH1Element);
+ 
+ 
+ 
+  const aboutH1Element = document.textContent('h1');
+     if (clickedLink.textContent === 'ABOUT')  
+      aboutH1Element.innerHTML= 'About'
+      //  mainEl.innerHTML = '';
+      //   mainEl.appendChild(aboutH1Element);
+  
 }
+
+
+
