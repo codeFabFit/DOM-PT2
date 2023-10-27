@@ -27,9 +27,8 @@ mainEl.style.height = "100vh"
 
 const h1Element = document.createElement("h1")
 h1Element.textContent = "DOM Manipulation";
-
-
-
+const subMenuLink = document.createElement('h1')
+subMenuLink.textContent ="ABOUT"
 
 
 // join the h1 to the content 
@@ -96,7 +95,7 @@ if (Element.target && element.target.tagName) {
   let subLinks = [];
   buildSubmenu(subLinks);
 
- }}
+ 
 
  function buildSubmenu(subLinks) {
 subMenuEl.innerHTML= '';
@@ -105,15 +104,16 @@ subLinks.forEach(link => {
   subMenuLink.setAttribute('href', link.href);
 subMenuEl.appendChild(subMenuLink);
 })
+
  
- 
+ }}
  
   const aboutH1Element = document.textContent('h1');
      if (clickedLink.textContent === 'ABOUT')  
       aboutH1Element.innerHTML= 'About'
-      //  mainEl.innerHTML = '';
-      //   mainEl.appendChild(aboutH1Element);
-  
+       mainEl.innerHTML = '';
+        mainEl.appendChild(aboutH1Element);
+  addEventListener(subMenuLink)
 }
 
 
